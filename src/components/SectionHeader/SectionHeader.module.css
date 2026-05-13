@@ -5,10 +5,12 @@
   font-family: var(--serif);
   font-size: clamp(2.4rem, 5vw, 4.5rem);
   font-weight: 700;
-  font-style: italic;
   color: var(--acc);
   line-height: 1;
   margin-bottom: 0.6rem;
+}
+.headingCentered {
+  text-align: center;
 }
 .rule {
   width: 100%;
