@@ -6,6 +6,8 @@ node_modules/
 # Portfolio source (design assets, not for deployment)
 Portfolio/
 
+.claude/
+
 # Env
 .env.local
 .env*.local
