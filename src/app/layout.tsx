@@ -1,21 +1,20 @@
 // src/app/layout.tsx
 import type { Metadata } from 'next'
-import { Libre_Baskerville, Courier_Prime } from 'next/font/google'
+import { EB_Garamond, Space_Mono } from 'next/font/google'
 import { ThemeProvider } from '@/context/ThemeContext'
 import { profile } from '@/data/profile'
 import './globals.css'
 
-const baskerville = Libre_Baskerville({
+const garamond = EB_Garamond({
   subsets: ['latin'],
   weight: ['700'],
-  style: ['normal', 'italic'],
+  style: ['normal'],
   variable: '--font-serif',
 })
 
-const courier = Courier_Prime({
+const spaceMono = Space_Mono({
   subsets: ['latin'],
   weight: ['400', '700'],
-  style: ['normal', 'italic'],
   variable: '--font-mono',
 })
 
@@ -61,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${baskerville.variable} ${courier.variable}`}
+      className={`${garamond.variable} ${spaceMono.variable}`}
     >
       <head>
         {/* Prevent flash of wrong theme before React hydrates */}
