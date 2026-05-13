@@ -31,25 +31,28 @@ export default function Hero() {
 
   return (
     <section id="hero" className={styles.hero}>
-      <div className={styles.left}>
-        <div className={styles.hi}>HI! I&apos;M</div>
-        <div className={styles.name}>MUKESH PANT.</div>
-        <div className={styles.role}>
-          <span className={styles.bar}>|</span>
-          <span ref={typedRef}>{profile.roles[0]}</span>
-          <span className={styles.cursor} aria-hidden="true" />
+      <div className={styles.heroContent}>
+        <div className={styles.left}>
+          <div className={styles.hi}>HI! I&apos;M</div>
+          <div className={styles.name}>MUKESH PANT.</div>
+          <div className={styles.role}>
+            <span className={styles.bar}>|</span>
+            <span ref={typedRef}>{profile.roles[0]}</span>
+            <span className={styles.cursor} aria-hidden="true" />
+          </div>
+          <div className={styles.spec}>Specialized In</div>
+          <p className={styles.bio}>{profile.bio}</p>
+          <div className={styles.ctas}>
+            <a href={profile.resumeUrl} className="btn-dl" download>↓ Download Resume</a>
+          </div>
         </div>
-        <div className={styles.spec}>Specialized In</div>
-        <p className={styles.bio}>{profile.bio}</p>
-        <div className={styles.ctas}>
-          <a href={profile.resumeUrl} className="btn-dl" download>↓ Download Resume</a>
-          <a href="#connect" className="btn-ghost">Let&apos;s Connect ✉</a>
+        <div className={styles.photoWrap}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={profile.photoUrl} alt="Mukesh Pant — DevOps & Cloud Engineer" />
         </div>
-        <a href="#about" className={styles.scrollBtn} aria-label="Scroll to about section">↓</a>
       </div>
-      <div className={styles.photoWrap}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={profile.photoUrl} alt="Mukesh Pant — DevOps & Cloud Engineer" />
+      <div className={styles.scrollRow}>
+        <a href="#about" className={styles.scrollBtn} aria-label="Scroll to about section">↓</a>
       </div>
     </section>
   )
