@@ -181,11 +181,35 @@ Card default style (matches project/skill cards):
 
 ---
 
-## 8. Certs Section
+## 8. Certs Section — Badge Card Rebuild
 
-**No structural changes.** Apply the same card styling update as Projects:
-- White bg by default
-- Hover → accent bg, white text (if not already styled this way)
+**Files:** `src/data/certs.ts`, `src/components/Certs/Certs.tsx`, `Certs.module.css`
+
+### Data model
+```typescript
+export interface Cert {
+  name: string
+  issuer: string
+  date: string
+  badgeUrl: string   // Credly CDN image URL for the badge PNG
+  verifyUrl: string  // Credly public badge URL — card links here
+}
+```
+
+### Cert entries
+| Cert | Badge image URL | Verify URL |
+|---|---|---|
+| AWS Security — Specialty (SCS-C03) | `https://images.credly.com/size/340x340/images/53acdae5-d69f-4dda-b650-d02ed7a50dd7/image.png` | https://www.credly.com/badges/fe40cb52-c521-4d82-8562-e8d521ece68a/public_url |
+| AWS Cloud Practitioner (CLF-C02) | `https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png` | *(no verify URL — link disabled)* |
+
+### Component layout
+2-column grid (one row, matching the 2 certs). Each card is an `<a>` pointing to `verifyUrl` (opens in new tab):
+- White bg, 2px accent border, offset shadow (`bottom: -6px; right: -6px`)
+- Badge `<img>` centered, 80×80px (larger than skills icons to show badge detail)
+- Cert name below: mono, bold, 13px, uppercase
+- Issuer + date row: mono, small, `color: var(--t3)`
+- **Hover**: accent bg, `filter: brightness(0) invert(1)` on badge image, name → white, issuer/date → white
+- Cards without a verifyUrl render as `<div>` instead of `<a>` (no pointer/hover link behaviour — still shows hover accent for visual consistency)
 
 ---
 
@@ -218,4 +242,7 @@ Style: centered, mono font, small size — matching reference footer.
 | `src/components/Connect/Connect.tsx` | 3-card layout, centered header, STATUS badge |
 | `src/components/Connect/Connect.module.css` | Updated card + hover styles |
 | `src/app/page.tsx` | Remove ContactForm import + JSX |
+| `src/data/certs.ts` | Add badgeUrl, issuer fields; remove emoji icon |
+| `src/components/Certs/Certs.tsx` | Badge card grid — `<a>` links to Credly |
+| `src/components/Certs/Certs.module.css` | Badge card + hover-accent styles |
 | `src/components/Footer/Footer.tsx` | Copyright text update |
