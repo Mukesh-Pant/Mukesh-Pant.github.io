@@ -8,7 +8,7 @@ import './globals.css'
 const garamond = EB_Garamond({
   subsets: ['latin'],
   weight: ['700'],
-  style: ['normal'],
+  style: ['normal', 'italic'],
   variable: '--font-serif',
 })
 
