@@ -1,38 +1,21 @@
 export interface Skill {
-  category: string
   name: string
-  tags: string[]
+  iconUrl: string
 }
 
+const BASE = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons'
+
 export const skills: Skill[] = [
-  {
-    category: 'Cloud & IaC',
-    name: 'AWS · Azure · Terraform',
-    tags: ['EC2', 'S3', 'IAM', 'VPC', 'RDS', 'Lambda', 'CloudFormation', 'ECR', 'STS', 'Terraform', 'Ansible'],
-  },
-  {
-    category: 'CI / CD',
-    name: 'Pipelines & Automation',
-    tags: ['GitHub Actions', 'Jenkins', 'Azure DevOps', 'GitLab CI'],
-  },
-  {
-    category: 'Containers',
-    name: 'Docker · Kubernetes',
-    tags: ['Docker', 'Docker Compose', 'Kubernetes', 'Helm'],
-  },
-  {
-    category: 'Observability & Security',
-    name: 'Monitor · Protect · Comply',
-    tags: ['Prometheus', 'Grafana', 'Datadog', 'CloudWatch', 'IAM Policy', 'SSL/TLS', 'SAST/DAST'],
-  },
-  {
-    category: 'Languages',
-    name: 'Scripting & Backend',
-    tags: ['Python', 'Bash', 'PowerShell', 'SQL', 'Java', 'C / C++'],
-  },
-  {
-    category: 'Tooling',
-    name: 'Ecosystem',
-    tags: ['Git', 'Boto3', 'REST API', 'Postman', 'Helm Charts', 'PM2'],
-  },
+  { name: 'AWS', iconUrl: `${BASE}/amazonwebservices/amazonwebservices-original-wordmark.svg` },
+  { name: 'Terraform', iconUrl: `${BASE}/terraform/terraform-original.svg` },
+  { name: 'Docker', iconUrl: `${BASE}/docker/docker-original.svg` },
+  { name: 'Kubernetes', iconUrl: `${BASE}/kubernetes/kubernetes-original.svg` },
+  { name: 'Ansible', iconUrl: `${BASE}/ansible/ansible-original.svg` },
+  { name: 'GitHub Actions', iconUrl: `${BASE}/github/github-original.svg` },
+  { name: 'Jenkins', iconUrl: `${BASE}/jenkins/jenkins-original.svg` },
+  { name: 'Python', iconUrl: `${BASE}/python/python-original.svg` },
+  { name: 'Linux', iconUrl: `${BASE}/linux/linux-original.svg` },
+  { name: 'Git', iconUrl: `${BASE}/git/git-original.svg` },
+  { name: 'Prometheus', iconUrl: `${BASE}/prometheus/prometheus-original.svg` },
+  { name: 'Grafana', iconUrl: `${BASE}/grafana/grafana-original.svg` },
 ]
