@@ -1,0 +1,7 @@
+.body { padding: 2.5rem 2.5rem 3rem; }
+.body p { font-family: var(--mono); font-size: 14px; color: var(--t2); line-height: 1.95; margin-bottom: 1.2rem; max-width: 780px; }
+.body strong { color: var(--t1); font-weight: 700; }
+.pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2rem; }
+.pill { font-family: var(--mono); font-size: 12px; padding: 5px 12px; border: 1.5px solid var(--acc); color: var(--acc); }
+.pillKey { opacity: 0.6; }
+@media (max-width: 860px) { .body { padding-left: 1.5rem; padding-right: 1.5rem; } }
