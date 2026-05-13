@@ -3,7 +3,7 @@ import styles from './ProjectCard.module.css'
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className={`${styles.card} ${project.filled ? styles.filled : ''} reveal`}>
+    <div className={`${styles.card} reveal`}>
       <div className={styles.label}>{project.label}</div>
       <div className={styles.title}>{project.title}</div>
       <div className={styles.overviewLabel}>Overview:</div>

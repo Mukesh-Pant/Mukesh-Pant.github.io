@@ -6,7 +6,6 @@ export interface Project {
   tools: string[]
   liveUrl?: string
   repoUrl: string
-  filled: boolean
 }
 
 export const projects: Project[] = [
@@ -19,7 +18,6 @@ export const projects: Project[] = [
     tools: ['Python', 'Boto3', 'Lambda', 'DynamoDB', 'API Gateway', 'STS', 'Cognito'],
     liveUrl: 'https://app.onecloudutopia.com',
     repoUrl: 'https://github.com/Mukesh-Pant/ec2-control-center',
-    filled: false,
   },
   {
     id: '02',
@@ -29,7 +27,6 @@ export const projects: Project[] = [
       'End-to-end pipeline from ESP32 sensor firmware → MQTT broker → FastAPI backend, feeding 4 co-located ML models served via Next.js dashboard. Containerised full stack with zero-touch GitHub Actions deployments on every merge to main.',
     tools: ['FastAPI', 'PostgreSQL', 'MongoDB', 'Docker', 'GitHub Actions', 'ESP32'],
     repoUrl: 'https://github.com/Mukesh-Pant/smart-agriculture-iot',
-    filled: true,
   },
   {
     id: '03',
@@ -39,7 +36,6 @@ export const projects: Project[] = [
       '9 isolated AWS workloads across 8 Terraform modules + 1 CloudFormation template. Every resource, IAM policy, and service wiring explicit from scratch. Reusable config.yaml layer keeps full runs under USD 2.',
     tools: ['Terraform', 'CloudFormation', 'VPC', 'ECS Fargate', 'Lambda', 'SNS'],
     repoUrl: 'https://github.com/Mukesh-Pant/cloud-computing-fwu-labs',
-    filled: true,
   },
   {
     id: '04',
@@ -49,6 +45,5 @@ export const projects: Project[] = [
       'Hybrid RAG pipeline: BM25 (0.3) + pgvector semantic search (0.7), Cohere reranking of top-20 candidates, streaming SSE with bilingual English & Nepali (Devanagari) responses. JWT auth, admin/user RBAC, PDF/DOCX ingestion UI.',
     tools: ['FastAPI', 'Next.js', 'pgvector', 'Gemini 2.5', 'Cohere', 'Docker'],
     repoUrl: 'https://github.com/Mukesh-Pant/NITI-SATHI',
-    filled: false,
   },
 ]
