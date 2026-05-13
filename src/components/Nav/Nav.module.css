@@ -24,24 +24,17 @@
   font-family: var(--mono); font-size: 12px; font-weight: 700;
   color: var(--t2); text-decoration: none;
   padding: 6px 14px; letter-spacing: 0.06em; text-transform: uppercase;
-  border: 1.5px solid transparent; transition: all 0.15s;
+  border: 2px solid transparent; transition: all 0.15s;
 }
 .link:hover, .active { border-color: var(--acc); color: var(--acc); }
-.right { display: flex; align-items: center; gap: 0.5rem; }
+.right { display: flex; align-items: center; }
 .themeBtn {
   width: 34px; height: 34px; border: 2px solid var(--acc);
   background: transparent; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  font-size: 15px; transition: all 0.15s; color: var(--t1);
+  transition: all 0.15s; color: var(--t1);
 }
 .themeBtn:hover { background: var(--acc); color: #fff; }
-.resumeBtn {
-  font-family: var(--mono); font-size: 11.5px; font-weight: 700;
-  color: var(--t1); text-decoration: none;
-  padding: 6px 14px; border: 1.5px solid var(--acc);
-  letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.15s;
-}
-.resumeBtn:hover { background: var(--acc); color: #fff; }
 @media (max-width: 860px) {
   .nav { max-width: 100vw; border-left: none; border-right: none; padding: 0 1rem; }
   .links { display: none; }
