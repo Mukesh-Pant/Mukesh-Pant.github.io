@@ -1,5 +1,5 @@
 .hero {
-  min-height: calc(100vh - 58px);
+  min-height: min(calc(100vh - 58px), 900px);
   display: flex;
   flex-direction: column;
   border-bottom: 1.5px solid var(--acc);
@@ -14,14 +14,15 @@
 }
 .hi, .name {
   font-family: var(--serif);
-  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-size: clamp(2.6rem, 5.5vw, 5.2rem);
   font-weight: 700; line-height: 0.92;
   letter-spacing: -0.02em; color: var(--t1);
 }
 .hi { margin-bottom: 0.2rem; }
 .name { margin-bottom: 1.2rem; }
 .role {
-  font-family: var(--mono); font-size: clamp(0.95rem, 1.8vw, 1.3rem);
+  font-family: var(--mono); font-size: clamp(1.1rem, 2.4vw, 2.1rem);
+  font-weight: 700;
   color: var(--t1); margin-bottom: 1.5rem;
   display: flex; align-items: center; gap: 0.3rem;
 }
@@ -70,7 +71,7 @@
   content: ''; position: absolute;
   bottom: -12px; right: -12px;
   width: 100%; height: 100%;
-  border: 3px solid var(--acc); z-index: 0;
+  background: var(--acc); z-index: 0;
 }
 @media (max-width: 860px) {
   .heroContent { grid-template-columns: 1fr; padding: 80px 1.5rem 2rem; gap: 2rem; }

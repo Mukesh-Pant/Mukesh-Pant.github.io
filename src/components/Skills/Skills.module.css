@@ -8,9 +8,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 1.5rem 1rem;
   background: var(--bg);
   border: 2px solid var(--acc);
+  border-radius: 6px;
   position: relative;
   transition: all 0.2s;
   cursor: default;
@@ -23,23 +25,14 @@
   width: 100%;
   height: 100%;
   border: 2px solid var(--acc);
+  border-radius: 6px;
   z-index: -1;
   transition: all 0.2s;
 }
 .iconBox img {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
-  margin-bottom: 0.75rem;
-  transition: filter 0.2s;
-}
-.iconBox span {
-  font-family: var(--mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--t2);
-  text-align: center;
 }
 .iconBox:hover {
   background: var(--acc);
@@ -47,12 +40,6 @@
 }
 .iconBox:hover::after {
   border-color: rgba(255, 255, 255, 0.4);
-}
-.iconBox:hover img {
-  filter: brightness(0) invert(1);
-}
-.iconBox:hover span {
-  color: #fff;
 }
 @media (max-width: 860px) {
   .wrap { padding: 1.5rem; }

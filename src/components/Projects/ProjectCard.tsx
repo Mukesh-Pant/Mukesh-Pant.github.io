@@ -1,9 +1,10 @@
 import { Project } from '@/data/projects'
 import styles from './ProjectCard.module.css'
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({ project, variant = 'default' }: { project: Project; variant?: 'default' | 'accent' }) {
+  const cardClass = variant === 'accent' ? styles.cardAccent : styles.card
   return (
-    <div className={`${styles.card} reveal`}>
+    <div className={`${cardClass} reveal`}>
       <div className={styles.label}>{project.label}</div>
       <div className={styles.title}>{project.title}</div>
       <div className={styles.overviewLabel}>Overview:</div>

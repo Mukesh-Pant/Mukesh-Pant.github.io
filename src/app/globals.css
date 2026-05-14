@@ -78,14 +78,17 @@ body {
   letter-spacing: 0.08em;
   padding: 13px 24px;
   text-decoration: none;
-  background: var(--acc);
-  color: #fff;
-  border: 2px solid var(--acc);
-  box-shadow: var(--shadow-acc);
+  background: transparent;
+  color: var(--t1);
+  border: 2px solid var(--t1);
+  box-shadow: 5px 5px 0 var(--acc);
   transition: all 0.15s;
   cursor: pointer;
 }
 .btn-dl:hover {
+  background: var(--acc);
+  color: #fff;
+  border-color: var(--acc);
   transform: translate(-3px, -3px);
   box-shadow: 9px 9px 0 var(--acc);
 }

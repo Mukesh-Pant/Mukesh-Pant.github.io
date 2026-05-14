@@ -1,12 +1,14 @@
 .card {
   border: 2px solid var(--acc); padding: 1.8rem;
+  border-radius: 6px;
   transition: all 0.2s; position: relative;
   background: var(--bg);
 }
 .card::after {
   content: ''; position: absolute;
   bottom: -8px; right: -8px; width: 100%; height: 100%;
-  border: 2px solid var(--acc); z-index: -1; transition: all 0.2s;
+  border: 2px solid var(--acc); border-radius: 6px;
+  z-index: -1; transition: all 0.2s;
 }
 .card:hover {
   background: var(--acc);
@@ -24,6 +26,36 @@
 .card:hover .pill { color: rgba(255, 255, 255, 0.85); border-color: rgba(255, 255, 255, 0.3); }
 .card:hover .btnGh { border-color: #fff; color: #fff; }
 .card:hover .btnGh:hover { background: #fff; color: var(--acc); }
+
+/* Accent (even-position) card — solid magenta filled */
+.cardAccent {
+  border: 2px solid var(--acc); padding: 1.8rem;
+  border-radius: 6px;
+  transition: all 0.2s; position: relative;
+  background: var(--acc);
+}
+.cardAccent::after {
+  content: ''; position: absolute;
+  bottom: -8px; right: -8px; width: 100%; height: 100%;
+  border: 2px solid var(--acc); border-radius: 6px;
+  background: rgba(0,0,0,0.15);
+  z-index: -1; transition: all 0.2s;
+}
+.cardAccent:hover {
+  transform: translate(-4px, -4px);
+  filter: brightness(1.08);
+}
+.cardAccent:hover::after {
+  bottom: -12px; right: -12px;
+}
+.cardAccent .label,
+.cardAccent .overviewLabel,
+.cardAccent .title,
+.cardAccent .desc,
+.cardAccent .toolsLabel { color: rgba(255, 255, 255, 0.9); }
+.cardAccent .pill { color: rgba(255, 255, 255, 0.85); border-color: rgba(255, 255, 255, 0.3); }
+.cardAccent .btnGh { border-color: #fff; color: #fff; }
+.cardAccent .btnGh:hover { background: #fff; color: var(--acc); }
 .label {
   font-family: var(--mono); font-size: 10.5px; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;

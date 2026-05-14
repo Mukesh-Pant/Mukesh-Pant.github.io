@@ -9,9 +9,8 @@ export default function Skills() {
       <div className={styles.wrap}>
         <div className={styles.grid}>
           {skills.map((skill) => (
-            <div key={skill.name} className={`${styles.iconBox} reveal`}>
-              <img src={skill.iconUrl} alt={skill.name} width={48} height={48} />
-              <span>{skill.name}</span>
+            <div key={skill.name} className={`${styles.iconBox} reveal`} aria-label={skill.name} title={skill.name}>
+              <img src={skill.iconUrl} alt={skill.name} width={52} height={52} />
             </div>
           ))}
         </div>
