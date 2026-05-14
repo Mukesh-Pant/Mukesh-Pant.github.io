@@ -2,10 +2,18 @@ import { Project } from '@/data/projects'
 import { toolIcons } from '@/data/toolIcons'
 import styles from './ProjectCard.module.css'
 
-export default function ProjectCard({ project, variant = 'default' }: { project: Project; variant?: 'default' | 'accent' }) {
-  const cardClass = variant === 'accent' ? styles.cardAccent : styles.card
+export default function ProjectCard({ project }: { project: Project }) {
+  const seen = new Set<string>()
+  const dedupedTools = project.tools.filter((t) => {
+    const url = toolIcons[t]
+    if (!url) return true
+    if (seen.has(url)) return false
+    seen.add(url)
+    return true
+  })
+
   return (
-    <div className={`${cardClass} reveal`}>
+    <div className={`${styles.card} reveal`}>
       <div className={styles.label}>{project.label}</div>
       <div className={styles.title}>{project.title}</div>
       <div className={styles.overviewLabel}>Overview:</div>
@@ -13,10 +21,11 @@ export default function ProjectCard({ project, variant = 'default' }: { project:
       <div className={styles.tools}>
         <div className={styles.toolsLabel}>Tools:</div>
         <div className={styles.pills}>
-          {project.tools.map((t) => {
+          {dedupedTools.map((t) => {
             const iconUrl = toolIcons[t]
             return iconUrl ? (
               <span key={t} className={styles.iconPill} title={t}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={iconUrl} alt={t} width={24} height={24} />
               </span>
             ) : (

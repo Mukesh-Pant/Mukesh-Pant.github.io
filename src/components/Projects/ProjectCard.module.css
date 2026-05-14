@@ -1,13 +1,14 @@
 .card {
   border: 2px solid var(--acc); padding: 1.8rem;
-  border-radius: 6px;
+  border-radius: 10px;
   transition: all 0.2s; position: relative;
   background: var(--bg);
 }
 .card::after {
   content: ''; position: absolute;
   bottom: -8px; right: -8px; width: 100%; height: 100%;
-  border: 2px solid var(--acc); border-radius: 6px;
+  background: var(--acc);
+  border: 2px solid var(--acc); border-radius: 10px;
   z-index: -1; transition: all 0.2s;
 }
 .card:hover {
@@ -17,6 +18,7 @@
 .card:hover::after {
   bottom: -1px; right: -1px;
   border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.15);
 }
 .card:hover .label,
 .card:hover .overviewLabel,
@@ -26,36 +28,7 @@
 .card:hover .pill { color: rgba(255, 255, 255, 0.85); border-color: rgba(255, 255, 255, 0.3); }
 .card:hover .btnGh { background: #000; color: #fff; border-color: #000; }
 .card:hover .btnGh:hover { background: #fff; color: #000; border-color: #fff; }
-
-/* Accent (even-position) card — solid magenta filled */
-.cardAccent {
-  border: 2px solid var(--acc); padding: 1.8rem;
-  border-radius: 6px;
-  transition: all 0.2s; position: relative;
-  background: var(--acc);
-}
-.cardAccent::after {
-  content: ''; position: absolute;
-  bottom: -8px; right: -8px; width: 100%; height: 100%;
-  border: 2px solid var(--acc); border-radius: 6px;
-  background: rgba(0,0,0,0.15);
-  z-index: -1; transition: all 0.2s;
-}
-.cardAccent:hover {
-  transform: translate(4px, 4px);
-  filter: brightness(1.08);
-}
-.cardAccent:hover::after {
-  bottom: -1px; right: -1px;
-}
-.cardAccent .label,
-.cardAccent .overviewLabel,
-.cardAccent .title,
-.cardAccent .desc,
-.cardAccent .toolsLabel { color: rgba(255, 255, 255, 0.9); }
-.cardAccent .pill { color: rgba(255, 255, 255, 0.85); border-color: rgba(255, 255, 255, 0.3); }
-.cardAccent .btnGh { border-color: #fff; color: #fff; }
-.cardAccent .btnGh:hover { background: #fff; color: var(--acc); }
+.card:hover .iconPill { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); }
 
 .label {
   font-family: var(--mono); font-size: 10.5px; font-weight: 700;
@@ -72,23 +45,23 @@
 .tools { margin-bottom: 1.2rem; }
 .toolsLabel { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--t3); margin-bottom: 0.5rem; }
 .pills { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-.pill { font-family: var(--mono); font-size: 11px; padding: 3px 8px; border: 1px solid var(--brd); color: var(--t2); border-radius: 3px; }
+.pill { font-family: var(--mono); font-size: 11px; padding: 3px 8px; border: 1px solid var(--brd); color: var(--t2); border-radius: 4px; }
 .iconPill {
   display: inline-flex; align-items: center; justify-content: center;
   width: 36px; height: 36px;
-  border: 1px solid var(--brd); border-radius: 4px;
+  border: 1px solid var(--brd); border-radius: 5px;
   background: var(--bg2);
   transition: border-color 0.15s, background 0.15s;
 }
 .iconPill img { display: block; }
-.card:hover .iconPill { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); }
-.cardAccent .iconPill { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); }
 .actions { display: flex; gap: 0.6rem; }
 .btnGh {
   display: inline-flex; align-items: center; gap: 0.4rem;
   font-family: var(--mono); font-size: 12px; font-weight: 700;
   letter-spacing: 0.06em; text-transform: uppercase;
   flex: 1; padding: 10px; text-align: center; justify-content: center;
-  text-decoration: none; border: 2px solid var(--t1); color: var(--t1); transition: all 0.15s;
+  text-decoration: none; border: 2px solid var(--t1); color: var(--t1);
+  border-radius: 5px;
+  transition: all 0.15s;
 }
 .btnGh:hover { background: var(--t1); color: #fff; }
