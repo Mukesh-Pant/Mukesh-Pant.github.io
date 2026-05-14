@@ -22,7 +22,7 @@
   border: 2px solid var(--acc);
   border-radius: 5px;
   font-weight: 700; color: var(--t1); margin-right: 6px; font-size: 1rem;
-  background: transparent;
+  background: var(--bg);
   position: relative; z-index: 1;
   transition: all 0.15s;
 }
@@ -55,6 +55,7 @@
   color: var(--t2); text-decoration: none;
   padding: 6px 14px; letter-spacing: 0.06em; text-transform: uppercase;
   border: 2px solid transparent; border-radius: 5px;
+  background: var(--bg);
   transition: all 0.15s;
   position: relative; z-index: 1;
   display: block;
@@ -99,7 +100,7 @@
   width: 34px; height: 34px;
   border: 2px solid var(--acc);
   border-radius: 5px;
-  background: transparent; cursor: pointer;
+  background: var(--bg); cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   transition: all 0.15s; color: var(--t1);
   position: relative; z-index: 1;

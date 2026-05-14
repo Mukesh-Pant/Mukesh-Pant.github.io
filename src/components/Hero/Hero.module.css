@@ -56,6 +56,7 @@
   border: 2px solid var(--acc);
   border-radius: 6px;
   font-size: 1.2rem; color: var(--acc); text-decoration: none;
+  background: var(--bg);
   transition: all 0.15s;
   position: relative; z-index: 1;
 }
