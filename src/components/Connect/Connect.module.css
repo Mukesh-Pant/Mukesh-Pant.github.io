@@ -11,6 +11,7 @@
   padding: 6px 16px;
   border: 1.5px solid var(--t1);
   color: var(--t1);
+  border-radius: 4px;
 }
 
 .grid {
@@ -49,17 +50,15 @@
 
 .card:hover {
   background: var(--acc);
-  transform: translate(-4px, -4px);
+  transform: translate(4px, 4px);
 }
 
 .card:hover::after {
-  border-color: rgba(255, 255, 255, 0.4);
-  bottom: -12px;
-  right: -12px;
+  bottom: -1px; right: -1px;
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .ico { color: var(--t1); transition: color 0.2s; }
-
 .card:hover .ico { color: #fff; }
 
 .nm {
@@ -71,7 +70,6 @@
   color: var(--t1);
   transition: color 0.2s;
 }
-
 .card:hover .nm { color: #fff; }
 
 .sub {
@@ -79,13 +77,9 @@
   font-size: 11px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  color: var(--t1);
   transition: color 0.2s;
 }
-
-.subGithub { color: #6cc644; }
-.subLinkedin { color: #0077B5; }
-.subEmail { color: var(--acc); }
-
 .card:hover .sub { color: #fff; }
 
 @keyframes pulse {
@@ -96,10 +90,6 @@
 @media (max-width: 860px) {
   .wrap { padding: 1.5rem; }
   .grid { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 480px) {
-  .grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {

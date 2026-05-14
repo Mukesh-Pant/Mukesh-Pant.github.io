@@ -22,27 +22,9 @@ const EmailIcon = () => (
 )
 
 const CARDS = [
-  {
-    href: profile.github,
-    icon: <GitHubIcon />,
-    label: 'GitHub',
-    sub: 'Check My Repos',
-    subClass: styles.subGithub,
-  },
-  {
-    href: profile.linkedin,
-    icon: <LinkedInIcon />,
-    label: 'LinkedIn',
-    sub: "Let's Connect",
-    subClass: styles.subLinkedin,
-  },
-  {
-    href: `mailto:${profile.email}`,
-    icon: <EmailIcon />,
-    label: 'Email',
-    sub: 'Say Hello',
-    subClass: styles.subEmail,
-  },
+  { href: profile.github,            icon: <GitHubIcon />,   label: 'GitHub',   sub: 'Check My Repos' },
+  { href: profile.linkedin,          icon: <LinkedInIcon />, label: 'LinkedIn', sub: "Let's Connect"   },
+  { href: `mailto:${profile.email}`, icon: <EmailIcon />,    label: 'Email',    sub: 'Say Hello'       },
 ]
 
 export default function Connect() {
@@ -64,7 +46,7 @@ export default function Connect() {
             >
               <span className={styles.ico}>{card.icon}</span>
               <div className={styles.nm}>{card.label}</div>
-              <div className={`${styles.sub} ${card.subClass}`}>{card.sub}</div>
+              <div className={styles.sub}>{card.sub}</div>
             </a>
           ))}
         </div>

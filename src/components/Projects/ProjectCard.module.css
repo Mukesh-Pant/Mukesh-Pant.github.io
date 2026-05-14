@@ -12,11 +12,11 @@
 }
 .card:hover {
   background: var(--acc);
-  transform: translate(-4px, -4px);
+  transform: translate(4px, 4px);
 }
 .card:hover::after {
-  bottom: -12px; right: -12px;
-  border-color: rgba(255, 255, 255, 0.4);
+  bottom: -1px; right: -1px;
+  border-color: rgba(255, 255, 255, 0.25);
 }
 .card:hover .label,
 .card:hover .overviewLabel,
@@ -24,8 +24,8 @@
 .card:hover .desc,
 .card:hover .toolsLabel { color: rgba(255, 255, 255, 0.9); }
 .card:hover .pill { color: rgba(255, 255, 255, 0.85); border-color: rgba(255, 255, 255, 0.3); }
-.card:hover .btnGh { border-color: #fff; color: #fff; }
-.card:hover .btnGh:hover { background: #fff; color: var(--acc); }
+.card:hover .btnGh { background: #000; color: #fff; border-color: #000; }
+.card:hover .btnGh:hover { background: #fff; color: #000; border-color: #fff; }
 
 /* Accent (even-position) card — solid magenta filled */
 .cardAccent {
@@ -42,11 +42,11 @@
   z-index: -1; transition: all 0.2s;
 }
 .cardAccent:hover {
-  transform: translate(-4px, -4px);
+  transform: translate(4px, 4px);
   filter: brightness(1.08);
 }
 .cardAccent:hover::after {
-  bottom: -12px; right: -12px;
+  bottom: -1px; right: -1px;
 }
 .cardAccent .label,
 .cardAccent .overviewLabel,
@@ -56,6 +56,7 @@
 .cardAccent .pill { color: rgba(255, 255, 255, 0.85); border-color: rgba(255, 255, 255, 0.3); }
 .cardAccent .btnGh { border-color: #fff; color: #fff; }
 .cardAccent .btnGh:hover { background: #fff; color: var(--acc); }
+
 .label {
   font-family: var(--mono); font-size: 10.5px; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
@@ -70,8 +71,18 @@
 .desc { font-family: var(--mono); font-size: 12.5px; color: var(--t2); line-height: 1.8; margin-bottom: 1.2rem; }
 .tools { margin-bottom: 1.2rem; }
 .toolsLabel { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--t3); margin-bottom: 0.5rem; }
-.pills { display: flex; flex-wrap: wrap; gap: 5px; }
+.pills { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .pill { font-family: var(--mono); font-size: 11px; padding: 3px 8px; border: 1px solid var(--brd); color: var(--t2); border-radius: 3px; }
+.iconPill {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border: 1px solid var(--brd); border-radius: 4px;
+  background: var(--bg2);
+  transition: border-color 0.15s, background 0.15s;
+}
+.iconPill img { display: block; }
+.card:hover .iconPill { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); }
+.cardAccent .iconPill { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); }
 .actions { display: flex; gap: 0.6rem; }
 .btnGh {
   display: inline-flex; align-items: center; gap: 0.4rem;

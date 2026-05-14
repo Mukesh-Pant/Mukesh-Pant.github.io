@@ -36,10 +36,11 @@
 }
 .iconBox:hover {
   background: var(--acc);
-  transform: translate(-3px, -3px);
+  transform: translate(3px, 3px);
 }
 .iconBox:hover::after {
-  border-color: rgba(255, 255, 255, 0.4);
+  bottom: -1px; right: -1px;
+  border-color: rgba(255, 255, 255, 0.25);
 }
 @media (max-width: 860px) {
   .wrap { padding: 1.5rem; }

@@ -1,4 +1,5 @@
 import { Project } from '@/data/projects'
+import { toolIcons } from '@/data/toolIcons'
 import styles from './ProjectCard.module.css'
 
 export default function ProjectCard({ project, variant = 'default' }: { project: Project; variant?: 'default' | 'accent' }) {
@@ -12,7 +13,16 @@ export default function ProjectCard({ project, variant = 'default' }: { project:
       <div className={styles.tools}>
         <div className={styles.toolsLabel}>Tools:</div>
         <div className={styles.pills}>
-          {project.tools.map((t) => <span key={t} className={styles.pill}>{t}</span>)}
+          {project.tools.map((t) => {
+            const iconUrl = toolIcons[t]
+            return iconUrl ? (
+              <span key={t} className={styles.iconPill} title={t}>
+                <img src={iconUrl} alt={t} width={24} height={24} />
+              </span>
+            ) : (
+              <span key={t} className={styles.pill}>{t}</span>
+            )
+          })}
         </div>
       </div>
       <div className={styles.actions}>
